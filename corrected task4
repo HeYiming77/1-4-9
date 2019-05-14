@@ -1,0 +1,16 @@
+def getPL(n):
+    if len(n) > 0 and n.isalpha():
+       n = n.lower()
+       new_word = n[1:] + n[0] + "ay"
+       return new_word
+    else:
+       return "text is not valid!"
+
+original = input("Enter a text: ").split()
+letter = getPL(original[0])[0].upper()
+word = letter + getPL(original[0])[1:]
+text = word + " "
+for i in range (1, len(original)):
+    text = text + getPL(original[i]) + " "
+
+print(text)
