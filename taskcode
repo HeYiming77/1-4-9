@@ -1,0 +1,59 @@
+#task1
+def fibonacci(n):
+    a = 0
+    b = 1
+
+    for i in range(2,n+1):
+        c = a + b
+        a = b
+        b = c
+				print(c)
+
+print (fibonacci(100))
+
+
+
+
+#task4
+original = input("Enter a word:")
+suffix = "ay"
+
+if len(original) > 0 and original.isalpha():
+    original = original.lower()
+    first = original[0]
+
+    new_word = original + first + suffix
+    result = new_word[1:]
+    print(result)
+
+else:
+    print("Please enter another word!")
+
+
+
+
+
+#task9
+import math
+def getFactors(n):
+    factors = []
+    for i in range(1, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            factors.append(i)
+            factors.append(n//i)
+    return factors
+
+def isPrime(n):
+    return len(getFactors(n)) == 2
+
+allFactors = getFactors(600851475143)
+
+largestPrimeFactor = 0
+for a in allFactors:
+    if isPrime(a) and a > largestPrimeFactor:
+        largestPrimeFactor = a
+
+print(largestPrimeFactor)
+
+
+
