@@ -1,0 +1,15 @@
+#task4 : convert text to Pig Latin
+
+def getPigLatin(a):
+	    word = ""
+	    for i in range(0, len(a)):
+	        a[i] = a[i].lower()
+	        a[i] = a[i][1:] + a[i][0] + "ay"
+	    for i in a:
+	        word += i + " "
+	    word = word.capitalize()
+	    return word
+
+n = input("Enter a text: ").split()
+print(getPigLatin(n))
+
